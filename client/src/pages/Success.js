@@ -21,13 +21,16 @@ function Success() {
                     idbPromise('cart', 'delete', item);
                 });
             }
+
+            setTimeout(() => {
+                window.location.assign("/");
+            }, 3000);
         };
 
         saveOrder();
-        
     }, [addOrder]);
 
-    setTimeout(function () {window.location.assign("/");}, 3000);
+
 
     return (
         <div>
@@ -36,7 +39,7 @@ function Success() {
                 <h2>
                     Thank you for your purchase!
                 </h2>
-                <h2 onChange = {setTimeout}>
+                <h2>
                     You will now be redirected to the homepage
                 </h2>
             </Jumbotron>
